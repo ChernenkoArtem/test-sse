@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="form">
+    <input [(ngModel)]="inputValue" type="number" />
+    <button (click)="imageHendler()">Get Image</button>
+  </div>
+  <ng-container *ngIf="!isError; else notFound">
+    <img *ngIf="isLoad" [src]="imageSrc" alt="image" />
+  </ng-container>
+</div>
+
+<ng-template #notFound>
+  <div class="notFound">Error not found img</div>
+</ng-template>
